@@ -1,25 +1,19 @@
 import React from 'react';
-import Grid from '@mui/material/Grid';
+import Header from './components/Header/Header';
+import BottomNavbar from './components/BottomNavbar/BottomNavbar';
 
 const App = () => (
-  <main style={{ display: 'flex', height: '100vh', maxWidth: '812px', margin: '0 auto' }}>
-    <Grid
-      container
-      direction="column"
-      alignItems="center"
-      sx={{ bgcolor: 'primary.main' }}
-    >
-      <Grid item >
-        {/* Header */}
-      </Grid>
-      <Grid item>
-        {/* Content */}
-      </Grid>
-      <Grid item>
-        {/* Navbar */}
-      </Grid>
-    </Grid>
-  </main>
+  <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', maxWidth: '812px', margin: '0 auto' }}>
+    <Header userName='Wei' info='Dashboard' />
+    <div style={{
+      flex: 1,  /* 1 and it will fill whole space left if no flex value are set to other children*/
+      background: 'gold',
+      overflow: 'auto'
+    }}>
+      main content
+    </div>
+    <BottomNavbar />
+  </div>
 );
 
 export default App;
