@@ -1,0 +1,112 @@
+[
+    {
+        "planName": "upper body",
+        "planItems": [
+            {
+                "name": "bench press",
+                "sets": [
+                    {
+                        "name": "warmup",
+                        "reps": 10,
+                        "weight": 10
+                    },
+                    {
+                        "name": "first set",
+                        "reps": 10,
+                        "weight": 15
+                    },
+                    {
+                        "name": "second set",
+                        "reps": 10,
+                        "weight": 20
+                    }
+                ]
+            },
+            {
+                "name": "incline bench press",
+                "sets": [
+                    {
+                        "name": "warmup",
+                        "reps": 10,
+                        "weight": 10
+                    },
+                    {
+                        "name": "first set",
+                        "reps": 10,
+                        "weight": 15
+                    },
+                    {
+                        "name": "second set",
+                        "reps": 10,
+                        "weight": 20
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "planName": "lower body",
+        "planItems": [
+            {
+                "name": "leg press",
+                "sets": [
+                    {
+                        "name": "warmup",
+                        "reps": 10,
+                        "weight": 10
+                    },
+                    {
+                        "name": "first set",
+                        "reps": 10,
+                        "weight": 15
+                    },
+                    {
+                        "name": "second set",
+                        "reps": 10,
+                        "weight": 20
+                    }
+                ]
+            },
+            {
+                "name": "leg curl",
+                "sets": [
+                    {
+                        "name": "warmup",
+                        "reps": 10,
+                        "weight": 10
+                    },
+                    {
+                        "name": "first set",
+                        "reps": 10,
+                        "weight": 15
+                    },
+                    {
+                        "name": "second set",
+                        "reps": 10,
+                        "weight": 20
+                    }
+                ]
+            },
+            {
+                "name": "leg curl",
+                "sets": [
+                    {
+                        "name": "warmup",
+                        "reps": 10,
+                        "weight": 10
+                    },
+                    {
+                        "name": "first set",
+                        "reps": 10,
+                        "weight": 15
+                    },
+                    {
+                        "name": "second set",
+                        "reps": 10,
+                        "weight": 20
+                    }
+                ]
+            }
+        ]
+    }
+]
