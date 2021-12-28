@@ -1,5 +1,4 @@
-import { AppBar, Button, IconButton, Toolbar, Typography, Avatar } from '@mui/material';
-import AddSharpIcon from '@mui/icons-material/AddSharp';
+import { AppBar, IconButton, Toolbar, Typography, Avatar } from '@mui/material';
 import React from 'react';
 
 type HeaderProps = {
@@ -10,13 +9,6 @@ type HeaderProps = {
 const Header = ({ userName, info }: HeaderProps) => (
     <AppBar position="sticky" >
         <Toolbar sx={{ justifyContent: "space-between" }}>
-            <IconButton
-                edge="start"
-                color="inherit"
-                aria-label="add-workout"
-            >
-                <AddSharpIcon />
-            </IconButton>
             <Typography variant="h6">
                 {info}
             </Typography>
