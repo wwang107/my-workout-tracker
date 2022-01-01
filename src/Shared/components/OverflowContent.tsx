@@ -1,5 +1,4 @@
 import { Paper } from '@mui/material';
-import { padding } from '@mui/system';
 import React from 'react'
 
 const OverflowContent: React.FC = ({ children }) => (

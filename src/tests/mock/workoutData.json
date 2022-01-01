@@ -1,9 +1,11 @@
 [
     {
         "planName": "upper body",
+        "planId": 1,
         "planItems": [
             {
                 "name": "bench press",
+                "workoutId": 1,
                 "sets": [
                     {
                         "name": "warmup",
@@ -24,6 +26,7 @@
             },
             {
                 "name": "incline bench press",
+                "workoutId": 2,
                 "sets": [
                     {
                         "name": "warmup",
@@ -46,9 +49,11 @@
     },
     {
         "planName": "lower body",
+        "planId": 2,
         "planItems": [
             {
                 "name": "leg press",
+                "workoutId": 3,
                 "sets": [
                     {
                         "name": "warmup",
@@ -69,26 +74,7 @@
             },
             {
                 "name": "leg curl",
-                "sets": [
-                    {
-                        "name": "warmup",
-                        "reps": 10,
-                        "weight": 10
-                    },
-                    {
-                        "name": "first set",
-                        "reps": 10,
-                        "weight": 15
-                    },
-                    {
-                        "name": "second set",
-                        "reps": 10,
-                        "weight": 20
-                    }
-                ]
-            },
-            {
-                "name": "leg curl",
+                "workoutId": 4,
                 "sets": [
                     {
                         "name": "warmup",
