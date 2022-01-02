@@ -31,18 +31,17 @@ const Dashboard = () => {
           <Container sx={{ display: 'flex', justifyContent: 'center' }}>
             <WorkoutList workouts={workouts} />
             <ControlBar
-              addHandler={() => { console.log('add'); }}
+              addHandler={() => { }}
               playHandler={() => { navigate('exercise', { state: { workouts } }); }}
             />
           </Container>
-)}
+        )}
       />
       <Route
         path="exercise"
         element={<Playlist workouts={workouts} />}
       />
     </Routes>
-
   );
 };
 

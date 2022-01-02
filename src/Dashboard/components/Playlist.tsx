@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container } from '@mui/material';
-import { DragDropContext, DropResult } from 'react-beautiful-dnd';
+import { DropResult } from 'react-beautiful-dnd';
 import { WorkoutItem } from '../types/Workout';
 import WorkoutList from './WorkoutList';
 import ControlBar from './ControlBar';
@@ -30,15 +30,18 @@ const Playlist = ({ workouts }: PlaylistProps) => {
   };
 
   return (
-    <DragDropContext onDragEnd={handleOnDragEnd}>
-      <Container sx={{ display: 'flex', justifyContent: 'center' }}>
-        <WorkoutList workouts={sortableWorkouts} isDroppable showWorkoutCheckList={isWorkoutStart} />
-        <ControlBar
-          addHandler={() => { console.log('add'); }}
-          playHandler={() => { setWorkoutStart(true); }}
-        />
-      </Container>
-    </DragDropContext>
+    <Container sx={{ display: 'flex', justifyContent: 'center' }}>
+      <WorkoutList
+        workouts={sortableWorkouts}
+        dragEndHandler={handleOnDragEnd}
+        isDroppable={!isWorkoutStart}
+        showWorkoutCheckList={isWorkoutStart}
+      />
+      <ControlBar
+        addHandler={() => { console.log('Hi'); }}
+        playHandler={() => { setWorkoutStart(true); }}
+      />
+    </Container>
   );
 };
 
