@@ -18,12 +18,6 @@ const App = () => {
   const routes = [
     {
       label: "Workout", path: "/dashboard/*", to: "/dashboard", icon: <DashboardIcon />, component: <Dashboard />
-    },
-    {
-      label: "Statistics", path: "/statistic", to: "/statistic", icon: <BarChartIcon />, component: <Schedule />
-    },
-    {
-      label: "Profile", path: "/profile", to: "/profile", icon: <AccountCircleIcon />, component: <MyBody />
     }
   ]
 

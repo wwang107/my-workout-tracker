@@ -1,14 +1,11 @@
 import React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import { Box, Collapse } from '@mui/material';
-import { WorkoutItem } from '../types/Workout';
 import ReorderIcon from '@mui/icons-material/Reorder';
+import { Card, CardContent, Typography, Box, Chip, Grid, TableContainer, Table, TableCell, TableRow, TableBody, Paper, Checkbox, Collapse } from '@mui/material';
+import { WorkoutItem } from '../types/Workout';
 
-type WorkoutCardProps = WorkoutItem & { hasReorderIcon?: boolean }
+type WorkoutCardProps = WorkoutItem & { hasReorderIcon?: boolean, showCheckList?: boolean }
 
-const WorkoutCard = ({ planName, workoutName, sets, hasReorderIcon }: WorkoutCardProps) => {
+const WorkoutCard = ({ planName, planId, workoutName, workoutId, sets, hasReorderIcon, showCheckList }: WorkoutCardProps) => {
     return (
         <Card sx={{ width: '90%', minHeight: '100px', padding: '10px', borderRadius: 2 }}>
             <Box sx={{ display: 'flex' }}>
@@ -19,40 +16,29 @@ const WorkoutCard = ({ planName, workoutName, sets, hasReorderIcon }: WorkoutCar
                     <Typography component="div" variant="h5" >
                         {workoutName}
                     </Typography>
-                    <Typography variant="subtitle1" color="text.secondary" component="div">
-                        {sets.length} sets
-                    </Typography>
+                    <Grid container justifyContent="flex-start">
+                        {sets.map((set, index) => <Grid item key={`chip-${planId}-${workoutId}-${index}`} sx={{ marginRight: '2px', marginTop: '2px' }}><Chip label={`${set.name} \u22C6 ${set.weight} kg \u22C6 ${set.reps} reps`} size='small' variant='outlined' /></Grid>)}
+                    </Grid>
                 </CardContent>
                 {hasReorderIcon && <Box sx={{ display: "flex", alignItems: "center", marginLeft: "auto" }}><ReorderIcon /></Box>}
             </Box>
-            <Collapse in={false} timeout="auto" unmountOnExit>
-                <CardContent>
-                    <Typography paragraph>Method:</Typography>
-                    <Typography paragraph>
-                        Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
-                        aside for 10 minutes.
-                    </Typography>
-                    <Typography paragraph>
-                        Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over
-                        medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring
-                        occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a
-                        large plate and set aside, leaving chicken and chorizo in the pan. Add
-                        pimentón, bay leaves, garlic, tomatoes, onion, salt and pepper, and cook,
-                        stirring often until thickened and fragrant, about 10 minutes. Add
-                        saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
-                    </Typography>
-                    <Typography paragraph>
-                        Add rice and stir very gently to distribute. Top with artichokes and
-                        peppers, and cook without stirring, until most of the liquid is absorbed,
-                        15 to 18 minutes. Reduce heat to medium-low, add reserved shrimp and
-                        mussels, tucking them down into the rice, and cook again without
-                        stirring, until mussels have opened and rice is just tender, 5 to 7
-                        minutes more. (Discard any mussels that don’t open.)
-                    </Typography>
-                    <Typography>
-                        Set aside off of the heat to let rest for 10 minutes, and then serve.
-                    </Typography>
-                </CardContent>
+            <Collapse in={showCheckList}>
+                <TableContainer component={Paper}>
+                    <Table aria-label="simple table">
+                        <TableBody>
+                            {sets.map(set => (
+                                <TableRow key={set.name}>
+                                    <TableCell component="th" scope="row">
+                                        {set.name}
+                                    </TableCell>
+                                    <TableCell align="right">{set.weight} kg</TableCell>
+                                    <TableCell align="right">{set.reps} reps</TableCell>
+                                    <TableCell align="right"><Checkbox /></TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
             </Collapse>
         </Card>
     );

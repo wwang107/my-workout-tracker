@@ -3,11 +3,13 @@ import { Container } from '@mui/material';
 import { WorkoutItem } from '../types/Workout'
 import WorkoutList from './WorkoutList';
 import { DragDropContext, DropResult } from 'react-beautiful-dnd';
+import ControlBar from './ControlBar';
 
 type PlaylistProps = { workouts: WorkoutItem[] }
 
 const Playlist = ({ workouts }: PlaylistProps) => {
     const [sortableWorkouts, setSortableWork] = useState(workouts)
+    const [isWorkoutStart, setWorkoutStart] = useState(false)
 
     const handleOnDragEnd = (result: DropResult) => {
         const { destination, source } = result
@@ -29,7 +31,11 @@ const Playlist = ({ workouts }: PlaylistProps) => {
 
     return <DragDropContext onDragEnd={handleOnDragEnd}>
         <Container sx={{ display: 'flex', justifyContent: 'center' }}>
-            <WorkoutList workouts={sortableWorkouts} isDroppable />
+            <WorkoutList workouts={sortableWorkouts} isDroppable showWorkoutCheckList={isWorkoutStart} />
+            <ControlBar
+                addHandler={() => { console.log("add") }}
+                playHandler={() => { setWorkoutStart(true) }}
+            />
         </Container>
     </DragDropContext>
 }
