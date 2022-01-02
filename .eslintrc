@@ -1,0 +1,34 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "env": {
+    "browser": true
+  },
+  "parserOptions": {
+    "project": [
+      "tsconfig.json"
+    ]
+  },
+  "ignorePatterns": [
+    "webpack.config.js"
+  ],
+  "extends": [
+    "airbnb",
+    "airbnb-typescript"
+  ],
+  "rules": {
+    "import/prefer-default-export": "off",
+    "arrow-parens": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignorePattern": "^import .*|^  from *"
+      }
+    ],
+    "react/require-default-props": 0
+  }
+}

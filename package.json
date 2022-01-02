@@ -5,7 +5,9 @@
   "author": "wei",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --config ./webpack.config.js --mode development"
+    "start": "webpack serve --config ./webpack.config.js --mode development",
+    "lint": "eslint . --ext .ts",
+    "lint-and-fix": "eslint . --ext .tsx --fix"
   },
   "devDependencies": {
     "@types/jest": "^27.0.3",

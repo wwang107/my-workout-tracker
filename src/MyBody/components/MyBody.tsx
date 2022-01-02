@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 const MyBody = () => (
-    <>
-        my body
-    </>
+  <>
+    my body
+  </>
 );
 
 export default MyBody;
